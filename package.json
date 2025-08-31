@@ -1,0 +1,15 @@
+{
+  "name": "pop-govorit-bot",
+  "version": "1.0.0",
+  "description": "Православный телеграм-бот для замены дат на церковные праздники",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0"
+  },
+  "keywords": ["telegram", "bot", "orthodox", "calendar", "russian"],
+  "author": "Orthodox Bot",
+  "license": "MIT"
+}
