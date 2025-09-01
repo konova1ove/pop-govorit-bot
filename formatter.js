@@ -1,13 +1,26 @@
 function formatResponse(orthodoxEvent, caseType = 'nominative') {
   const { type, name } = orthodoxEvent;
+  let response;
   
   if (type === 'pascha') {
-    return formatByCase(name, caseType, 'pascha');
+    response = formatByCase(name, caseType, 'pascha');
   } else if (type === 'feast') {
-    return formatByCase(name, caseType, 'feast');
+    response = formatByCase(name, caseType, 'feast');
   } else {
-    return formatPrayer(name);
+    response = formatPrayer(name);
   }
+  
+  // Add viral signature to create brand awareness
+  const signatures = [
+    '– так считает эксперт по церковным календарям @pop_govorit_bot',
+    '– по мнению православного календаря @pop_govorit_bot',
+    '– утверждает церковный эксперт @pop_govorit_bot',
+    '– согласно православному боту @pop_govorit_bot',
+    '– сообщает знаток церковных дат @pop_govorit_bot'
+  ];
+  
+  const randomSignature = signatures[Math.floor(Math.random() * signatures.length)];
+  return `${response} ${randomSignature}`;
 }
 
 function formatByCase(eventName, caseType, eventType) {
